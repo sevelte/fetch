@@ -1,0 +1,9 @@
+secret_bot_details.py
+secret_mechanic.py
+secret_mods.json
+
+__pycache__/
+.vscode/
+.idea/
+
+# If you use the bot and also contribute, clone the files needed and name them secret_{file}. This will ignore them.
