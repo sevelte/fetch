@@ -1,17 +1,14 @@
 # Fetch Installer
-# Will detect your system, and run the command appropriotely.
+# Also updates dependencies
 
-import platform
+import os
 
-system = platform.system().lower()
+dependencies = ["discord", "requests"] # Can be updated and it will automatically update on this running
 
-print("Detected OS: {}".format(system))
+for dependency in dependencies:
+	print("{}: updating dependency".format(dependency))
+	os.system("pip install {}".format(dependency))
+	print("{}: updated dependency".format(dependency))
 
-if system == "windows":
-  os.system("powershell install.ps1")
-elif system == "macos":
-  os.system("bash install.bash")
-elif system == "linux":
-  os.system("bash install.bash")
-else:
-  os.system("Not supported, please use manual installation.")
+print("Running fetch_bot.py..") 
+os.system("python fetch_bot.py") # run the bot
